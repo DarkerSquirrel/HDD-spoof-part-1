@@ -135,8 +135,8 @@ PVOID getDriverBaseAddress(OUT PULONG pSize, const char* driverName)
 				DriverBase = pMod[i].ImageBase;
 				DriverSize = pMod[i].ImageSize;
 
-				DbgPrint("Disk.sys Size : %i\n", DriverSize);
-				DbgPrint("Disk.sys Base : %p\n", DriverBase);
+				DbgPrint("kernel module Size : %i\n", DriverSize);
+				DbgPrint("kernel module Base : %p\n", DriverBase);
 
 
 				if (arrayOfModules)
