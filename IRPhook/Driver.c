@@ -14,7 +14,6 @@ typedef struct IoCompletionStruct
 	PIO_COMPLETION_ROUTINE	oldCompletionRoutine;
 	PSTORAGE_DEVICE_DESCRIPTOR	requestBuffer;
 	DWORD	OutBufferLength;
-	DWORD	signature;
 
 }IO_COMPLETION_STRUCT, * PIO_COMPLETION_STRUCT;
 
@@ -98,8 +97,6 @@ NTSTATUS spoofDisk(PDEVICE_OBJECT	deviceObject, PIRP	 Irp)
 			newContext->oldCompletionRoutine = IoStackLocation->CompletionRoutine;
 
 			newContext->oldContext = OldContext;
-
-			newContext->signature = 0x99991111;
 
 			newContext->requestBuffer = requestBuffer;
 
